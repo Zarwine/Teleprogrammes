@@ -2,6 +2,7 @@
 Regroupement d'informations au sujet de Lucene
 
 <hr>
+
 ## Liens : 
 <ul>
     <li><a href="https://www.ionos.fr/digitalguide/serveur/configuration/apache-lucene/#:~:text=Lucene%20est%20une%20biblioth%C3%A8que%20de,d'autres%20langages%20de%20programmation." target="_blank">Lucene, c'est quoi ?</a></li>
