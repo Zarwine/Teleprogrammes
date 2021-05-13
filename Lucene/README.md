@@ -1,6 +1,10 @@
 # Lucene
 Regroupement d'informations au sujet de Lucene
 
+*Lucene est une bibliothèque open source écrite en Java qui permet d'indexer et de chercher du texte. Il est utilisé dans certains moteurs de recherche.* 
+
+*C'est un projet de la fondation Apache mis à disposition sous licence Apache. Il est également disponible pour les langages Ruby, Perl, C++, PHP, C#, Python.*
+
 <hr>
 
 ## Liens : 
