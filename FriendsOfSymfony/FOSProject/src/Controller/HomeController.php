@@ -13,10 +13,8 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
-        $logout = "t";
-
         return $this->render("home/home.html.twig",[
-            'logout' => $logout,
+
         ]);
     }
 }
