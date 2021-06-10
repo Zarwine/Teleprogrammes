@@ -4,4 +4,19 @@
 
 {% block body %}
 <h1>Home Page</h1>
+<section>
+<h2>Voir votre horoscope</h2>
+    {% for chronique in chroniques %}
+    <div>
+        <h3>{{chronique.SigneAstro}}</h3>
+        <h4>Votre Couple</h4>
+        <p>{{chronique.Couple}}</p>
+        <h4>Votre Vie</h4>
+        <p>{{chronique.Vie}}</p>
+        <h4>Conseils Amoureux</h4>
+        <p>{{chronique.Conseils}}</p>
+    </div>
+    {% endfor %}
+<a href="#">Editer l'horoscope</a>
+</section>
 {% endblock %}

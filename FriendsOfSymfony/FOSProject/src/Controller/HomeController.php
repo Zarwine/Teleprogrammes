@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Chronique;
+use App\Repository\ChroniqueRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -13,8 +15,18 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render("home/home.html.twig",[
+        $chroniques = $this->getDoctrine()
+            ->getManager()
+            ->getRepository('App:Chronique')
+            ->findAll();
 
+        if (!$chroniques) {
+            throw $this->createNotFoundException(
+                "Aucun horoscope trouvé"
+            );
+        }
+        return $this->render("home/home.html.twig",[
+            "chroniques" => $chroniques,
         ]);
     }
 }
