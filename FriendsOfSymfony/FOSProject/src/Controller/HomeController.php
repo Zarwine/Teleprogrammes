@@ -29,23 +29,4 @@ class HomeController extends AbstractController
             "chroniques" => $chroniques,
         ]);
     }
-    /**
-     * @Route("/horoscope", name="app_horoscope")
-     */
-    public function horoscope(): Response
-    {
-        $chroniques = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('App:Chronique')
-            ->findAll();
-
-        if (!$chroniques) {
-            throw $this->createNotFoundException(
-                "Aucun horoscope trouvé"
-            );
-        }
-        return $this->render("home/horoscope.html.twig",[
-            "chroniques" => $chroniques,
-        ]);
-    }
 }

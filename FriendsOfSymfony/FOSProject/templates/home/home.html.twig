@@ -19,8 +19,8 @@
         <p>{{chronique.Vie}}</p>
         <h4>Conseils Amoureux</h4>
         <p>{{chronique.Conseils}}</p>
+<a href="{{ path("horoscope_show", {id: chronique.id}) }}">Editer l'horoscope</a>
     </div>
     {% endfor %}
-<a href="{{ path("horoscope") }}">Editer l'horoscope</a>
 </section>
 {% endblock %}

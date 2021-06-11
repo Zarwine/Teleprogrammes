@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link href='assets/home.css' rel="stylesheet" /> 
+{% endblock %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<h1>Home Page</h1>
+<section class="chronique_section">
+<h2>Voir votre horoscope</h2>
+    <form action="{{ path("horoscope_edit", {id: chronique.id}) }}" method="post" class="chronique_container">
+        <h3>{{chronique.SigneAstro}}</h3>
+        <h4>Votre Couple</h4>
+        <textarea type="text" name="couple" id="couple" >{{chronique.Couple}}</textarea>
+        <h4>Votre Vie</h4>
+        <textarea type="text" name="vie" id="vie" >{{chronique.Vie}}</textarea>
+        <h4>Conseils Amoureux</h4>
+        <textarea type="text" name="conseils" id="conseils" >{{chronique.Conseils}}</textarea>
+        <input type="submit" value="Editer">
+    </form>
+</section>
+{% endblock %}

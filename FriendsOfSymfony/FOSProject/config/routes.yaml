@@ -1,6 +1,9 @@
 index:
     path: /
     controller: App\Controller\HomeController::index
-horoscope:
-    path: /horoscope
-    controller: App\Controller\HomeController::horoscope
+horoscope_show:
+    path: /horoscope/show/{id}
+    controller: App\Controller\ChroniqueController::show
+horoscope_edit:
+    path: /horoscope/edit/{id}
+    controller: App\Controller\ChroniqueController::edit
