@@ -23,17 +23,17 @@ class Chronique
     private $SigneAstro;
 
     /**
-     * @ORM\Column(type="string", length=500)
+     * @ORM\Column(type="string", length=2500)
      */
     private $Couple;
 
     /**
-     * @ORM\Column(type="string", length=500)
+     * @ORM\Column(type="string", length=2500)
      */
     private $Vie;
 
     /**
-     * @ORM\Column(type="string", length=500)
+     * @ORM\Column(type="string", length=2500)
      */
     private $Conseils;
 

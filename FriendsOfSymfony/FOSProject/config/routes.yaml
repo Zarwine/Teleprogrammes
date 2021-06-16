@@ -7,3 +7,6 @@ horoscope_show:
 horoscope_edit:
     path: /horoscope/edit/{id}
     controller: App\Controller\ChroniqueController::edit
+horoscope_suggest:
+    path: /horoscope/suggest/{category}
+    controller: App\Controller\ChroniqueController::suggest

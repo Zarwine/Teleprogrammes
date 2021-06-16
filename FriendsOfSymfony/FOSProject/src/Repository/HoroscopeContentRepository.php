@@ -2,9 +2,10 @@
 
 namespace App\Repository;
 
+use Doctrine\ORM\EntityManager;
 use App\Entity\HoroscopeContent;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method HoroscopeContent|null find($id, $lockMode = null, $lockVersion = null)
@@ -47,4 +48,14 @@ class HoroscopeContentRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function getRandom(): array
+    {
+        $entityManager = $this->getEntityManager()->getConnection();
+        $sql = 'SELECT * from horoscope_content ORDER BY RAND() LIMIT 1';
+        $stmt = $entityManager->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetch();
+    }
 }

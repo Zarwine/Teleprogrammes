@@ -3,8 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Chronique;
+use Doctrine\ORM\EntityManager;
+use App\Entity\HoroscopeContent;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Request;
+use App\Repository\HoroscopeContentRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -47,12 +50,29 @@ class ChroniqueController extends AbstractController
 
         $request = Request::createFromGlobals();
         
-        $chronique->setCouple($request->request->get("couple"));
-        $chronique->setVie($request->request->get("vie"));
-        $chronique->setConseils($request->request->get("conseils"));
+        $chronique->setCouple($request->request->get("votre_couple"));
+        $chronique->setVie($request->request->get("votre_vie_solo"));
+        $chronique->setConseils($request->request->get("conseils_amoureux"));
         $entityManager->persist($chronique);
         $entityManager->flush();
 
         return $this->redirectToRoute('app_home');
+    }
+
+    /**
+     * @Route("/horoscope/suggest/{category}", name="horoscope_suggest")
+     */
+    public function suggest(string $category)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $suggests = $entityManager->getRepository(HoroscopeContent::class)->getRandom();
+
+        $response = new Response(
+            $suggests[$category],
+            Response::HTTP_OK,
+            ['content-type' => 'application/json']
+        );
+
+        return $response->send();
     }
 }

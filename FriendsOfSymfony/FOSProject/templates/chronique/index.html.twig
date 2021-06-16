@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    <link href='assets/home.css' rel="stylesheet" /> 
+    <link href='assets/css/home.css' rel="stylesheet" /> 
 {% endblock %}
 
 {% block title %}Log in!{% endblock %}
@@ -13,12 +13,16 @@
     <form action="{{ path("horoscope_edit", {id: chronique.id}) }}" method="post" class="chronique_container">
         <h3>{{chronique.SigneAstro}}</h3>
         <h4>Votre Couple</h4>
-        <textarea type="text" name="couple" id="couple" >{{chronique.Couple}}</textarea>
+        <textarea type="text" name="votre_couple" id="votre_couple" >{{chronique.Couple}}</textarea>
+        <a href='#' name="votre_couple" class="random_btn">Aléatoire</a>
         <h4>Votre Vie</h4>
-        <textarea type="text" name="vie" id="vie" >{{chronique.Vie}}</textarea>
+        <textarea type="text" name="votre_vie_solo" id="votre_vie_solo" >{{chronique.Vie}}</textarea>
+        <a href='#' name="votre_vie_solo" class="random_btn">Aléatoire</a>
         <h4>Conseils Amoureux</h4>
-        <textarea type="text" name="conseils" id="conseils" >{{chronique.Conseils}}</textarea>
+        <textarea type="text" name="conseils_amoureux" id="conseils_amoureux" >{{chronique.Conseils}}</textarea>
+        <a href='#' name="conseils_amoureux" class="random_btn">Aléatoire</a>
         <input type="submit" value="Editer">
     </form>
 </section>
+<script src="/assets/js/RandomSuggest.js"></script>
 {% endblock %}
