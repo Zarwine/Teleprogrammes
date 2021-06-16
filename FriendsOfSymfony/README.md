@@ -13,10 +13,10 @@ Nous pouvons voir la liste des horoscopes récupérée en BDD. Chaque horoscope 
 Sur le second screen il y a la page d'édition d'horoscope. Le contenu des horoscopes est récupéré en BDD et directement injecté dans les zones d'édition correspondantes. Il est possible de demander une suggestion aléatoire en cliquant sur "Aléatoire", ceci écrasera le contenu de la zone de texte par un nouvel horoscope choisit aléatoirement en AJAX dans une table prévue pour ça. Vous pouvez modifier ce contenu comme vous le souhaitez.
 
 Une fois le travail terminé, il suffit de cliquer sur "Editer" pour valider l'opération.
-<img src="https://github.com/Zarwine/Teleprogrammes/tree/main/FriendsOfSymfony/FOSProject/demo/horoscope_edit.jpg?raw=true" alt="edit"/>
+<img src="https://github.com/Zarwine/Teleprogrammes/blob/main/FriendsOfSymfony/FOSProject/demo/horoscope_edit.jpg?raw=true" alt="edit"/>
 
 Sur ce troisième screen il y un système fonctionnel de connexion.
-<img src="https://github.com/Zarwine/Teleprogrammes/tree/main/FriendsOfSymfony/FOSProject/demo/horoscope_signin.jpg?raw=true" alt="sign in"/>
+<img src="https://github.com/Zarwine/Teleprogrammes/blob/main/FriendsOfSymfony/FOSProject/demo/horoscope_signin.jpg?raw=true" alt="sign in"/>
 
 ## Installation du projet
 ```
