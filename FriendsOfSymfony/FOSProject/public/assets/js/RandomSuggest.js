@@ -1,7 +1,6 @@
 class RandomSuggest {
     constructor() {
         this.buttons = document.querySelectorAll(".random_btn")
-
         this.initButtons()
     }
 
@@ -17,11 +16,8 @@ class RandomSuggest {
     }
 
     getRandom = async function (category) {
-
-
-        let response = await fetch("https://localhost:8000/horoscope/suggest/" + category)
+        let response = await fetch(window.location.origin + "/horoscope/suggest/" + category)
         let suggest = await response.text()
-
         let textArea = document.getElementById(category)
 
         textArea.innerText = suggest

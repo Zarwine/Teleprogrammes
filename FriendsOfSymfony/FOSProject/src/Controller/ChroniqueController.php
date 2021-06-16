@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Repository\HoroscopeContentRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ChroniqueController extends AbstractController
@@ -70,8 +71,10 @@ class ChroniqueController extends AbstractController
         $response = new Response(
             $suggests[$category],
             Response::HTTP_OK,
-            ['content-type' => 'application/json']
         );
+
+        $session = new Session();
+        $session->start();
 
         return $response->send();
     }
