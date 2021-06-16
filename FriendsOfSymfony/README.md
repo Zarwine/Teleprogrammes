@@ -13,6 +13,8 @@ Nous pouvons voir la liste des horoscopes récupérée en BDD. Chaque horoscope 
 Sur le second screen il y a la page d'édition d'horoscope. Le contenu des horoscopes est récupéré en BDD et directement injecté dans les zones d'édition correspondantes. Il est possible de demander une suggestion aléatoire en cliquant sur "Aléatoire", ceci écrasera le contenu de la zone de texte par un nouvel horoscope choisit aléatoirement en AJAX dans une table prévue pour ça. Vous pouvez modifier ce contenu comme vous le souhaitez.
 
 Une fois le travail terminé, il suffit de cliquer sur "Editer" pour valider l'opération.
+- <a href="https://github.com/Zarwine/Teleprogrammes/blob/main/FriendsOfSymfony/FOSProject/public/assets/js/RandomSuggest.js" target="_blank">Fichier AJAX</a>
+- <a href="https://github.com/Zarwine/Teleprogrammes/blob/main/FriendsOfSymfony/FOSProject/src/Repository/HoroscopeContentRepository.php" target="_blank">Requète SQL</a>
 <img src="https://github.com/Zarwine/Teleprogrammes/blob/main/FriendsOfSymfony/FOSProject/demo/horoscope_edit.jpg?raw=true" alt="edit"/>
 
 Sur ce troisième screen il y un système fonctionnel de connexion.
@@ -21,7 +23,14 @@ Sur ce troisième screen il y un système fonctionnel de connexion.
 ## Installation du projet
 ```
 - git clone https://github.com/Zarwine/Teleprogrammes.git
-- cd FriendsOfSymfony/FOSProject
+- cd Teleprogrammes/FriendsOfSymfony/FOSProject
 - composer install
-- symfony server:start
+- php bin/console doctrine:database:create
+- php bin/console doctrine:migrations:migrate
+- php bin/console doctrine:fixtures:load
+- cd public
+- php -S localhost:8000
 ```
+Vous rendre sur https://localhost:8000/
+
+PS : Pensez à lancer WAMP
